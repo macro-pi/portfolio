@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><!--head start-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
+        <link rel='stylesheet' href='tshirtBot.css'>
+        <title>Jeremiah Pitts Portfolio | T-Shirt Cannon Robot Case Study</title>
+        <link rel="icon" href="images\jp-logo.png" type="image/">
+        <script src="https://kit.fontawesome.com/269cae3fa0.js" crossorigin="anonymous"></script>
+    </head><!--head end-->
+    <body>
+        <!--body start-->
+        <div class='cursor fade-in'></div>
+        <header>
+            <!--header start-->
+            <nav>
+                <!--nav start-->
+                <a href='index.html' class='smaller-header hover-this'>jeremiah pitts</a>
+                <div class='right-container'>
+                    <a href='about.html' class='smaller-header even-smaller-header hover-this'>about me</a>
+                    <a href='resume.html' class='smaller-header even-smaller-header hover-this'>resumé</a>
+                    <a href='contact.html' class='smaller-header even-smaller-header hover-this'>contact me</a>
+                </div>
+            </nav>
+            <!--nav end-->
+        </header>
+        <!--header end-->
+        <footer>
+            <div class='social-menu'>
+                <a href='https://www.google.com/maps/place/Arlington,+TX/@32.7020541,-97.2755005,11z/data=!3m1!4b1!4m5!3m4!1s0x864e62d2e40898d3:0xb5ef6ac1fa05351!8m2!3d32.735687!4d-97.1080656'
+                    target='_blank'><i class="fas fa-map-marker-alt hover-this"></i></a>
+                <a href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=jeremiahnpitts@gmail.com' target='_blank'><i
+                        class="far fa-paper-plane hover-this"></i></a>
+                <a href='https://grabcad.com/jeremiah.pitts-3' target='_blank'
+                    onclick="window.open('https://github.com/macro-pi');"><i class="fas fa-code-branch hover-this"></i></a>
+                <a href='tel:+18172645290'><i class="fas fa-mobile-alt hover-this"></i></a>
+            </div>
+        </footer>
+    </body>
+    <!--body end-->
+
+    <script>
+        const cursor = document.querySelector('.cursor');
+        (function () {
+
+            const link = document.querySelectorAll('body');
+
+            const animateit = function (e) {
+                const span = this.querySelector('');
+                const { offsetX: x, offsetY: y } = e,
+                    { offsetWidth: width, offsetHeight: height } = this,
+
+                    move = 25,
+                    xMove = x / width * (move * 2) - move,
+                    yMove = y / height * (move * 2) - move;
+
+                span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+                if (e.type === 'mouseleave') span.style.transform = '';
+            };
+
+            const editCursor = e => {
+                const { clientX: x, clientY: y } = e;
+                cursor.style.left = x + 'px';
+                cursor.style.top = y + 'px';
+            };
+
+            link.forEach(b => b.addEventListener('mousemove', animateit));
+            link.forEach(b => b.addEventListener('mouseleave', animateit));
+            window.addEventListener('mousemove', editCursor);
+
+        })();
+
+        let hover_mouser = document.getElementsByClassName('hover-this');
+        for (let object of hover_mouser) {
+            object.addEventListener('mouseover', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(8)';
+            })
+            object.addEventListener('mouseout', () => {
+                cursor.style.transform = '';
+            })
+        }
+    </script>
+</html>
