@@ -58,6 +58,27 @@ a:link {
   color: #e1d6c2;
 }
 
+.large-text{
+  font-size: 3vw;
+  font-family: "Open Sans", sans-serif;
+  color:rgba(0, 0, 0, .5);
+  font-weight: 700;
+  position:relative;
+  text-align: center;
+}
+
+.bar{
+  align-self: center;
+  width: 15vw;
+  height: 0.5vw;
+  background-color:rgba(239, 178, 137, 0.85);
+  margin-top: 1vh;
+  margin-bottom: 8vh;
+  margin-left: 42vw;
+  position:relative;
+}
+
+
 .splash-box {
   box-sizing: border-box;
   position: inline;
