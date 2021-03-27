@@ -105,7 +105,7 @@ a:link {
 
 .splash-img {
   mix-blend-mode: screen;
-  padding-left: 100px;
+  margin-left: 100px;
   z-index: 9999;
   transform: scale(1.2);
 }
