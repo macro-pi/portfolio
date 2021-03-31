@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><!--head start-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
+        <link rel='stylesheet' href='underConstruction.css'>
+        <title>Jeremiah Pitts Portfolio | T-Shirt Cannon Robot Case Study</title>
+        <link rel="icon" href="images\jp-logo.png" type="image/">
+        <script src="https://kit.fontawesome.com/269cae3fa0.js" crossorigin="anonymous"></script>
+    </head><!--head end-->
+    <body>
+        <div class = 'cursor fade-in'></div>
+        <img src = 'images/construction.jpg' class = 'background-img'></img>
+        <button onclick="history.back()">
+            <img src = 'images\bb.png' class = 'bb'></button>
+        </button>
+    </body>
+    <script>
+        const cursor = document.querySelector('.cursor');
+        (function () {
+        
+              const link = document.querySelectorAll('body');
+        
+              const animateit = function (e) {
+                    const span = this.querySelector('');
+                    const { offsetX: x, offsetY: y } = e,
+                    { offsetWidth: width, offsetHeight: height } = this,
+        
+                    move = 25,
+                    xMove = x / width * (move * 2) - move,
+                    yMove = y / height * (move * 2) - move;
+        
+                    span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+        
+                    if (e.type === 'mouseleave') span.style.transform = '';
+              };
+        
+              const editCursor = e => {
+                    const { clientX: x, clientY: y } = e;
+                    cursor.style.left = x + 'px';
+                    cursor.style.top = y + 'px';
+              };
+        
+              link.forEach(b => b.addEventListener('mousemove', animateit));
+              link.forEach(b => b.addEventListener('mouseleave', animateit));
+              window.addEventListener('mousemove', editCursor);
+        
+        })();    
+    
+          let hover_mouser = document.getElementsByClassName('hover-this');
+          for(let object of hover_mouser){
+            object.addEventListener('mouseover',()=>{
+              cursor.style.transform = 'translate(-50%, -50%) scale(8)';
+            })
+            object.addEventListener('mouseout',()=>{
+              cursor.style.transform = '';
+            })
+          }
+        </script>
+</html>
