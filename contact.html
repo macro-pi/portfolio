@@ -30,18 +30,18 @@
 
       <h1>Contact Me</h1>
       <div class='border'></div>
-      <form class='contact-form' action='index.html' method='post'>
-        <input type='text' class='contact-form-text' placeholder='Your name'>
-        <input type='email' class='contact-form-text' placeholder='Your email'>
-        <input type='text' class='contact-form-text' placeholder='Your phone'>
-        <textarea class='contact-form-text' placeholder='Your message'></textarea>
+      <form class='contact-form' action='contactform.php' method='post'>
+        <input type='text' name='name' class='contact-form-text' placeholder='Your name'>
+        <input type='email' name='email' class='contact-form-text' placeholder='Your email'>
+        <input type='text' name='phone' class='contact-form-text' placeholder='Your phone'>
+        <textarea name='message' class='contact-form-text' placeholder='Your message'></textarea>
         <div class = 'contact-btn fade-in'>
           <a href = '#' class = 'hover-this'>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            <input type='submit' class='contact-form-btn hover-this' value='Send'>
+            <input name='submit' type='submit' class='contact-form-btn hover-this' value='Send'>
           </a>
         </div>
       </form>
